@@ -6,6 +6,7 @@ public class Player {
     private int minutes;
     private int goals;
     private int assists;
+    private String position;
 
     public Player(String n){
         name = n;
@@ -44,5 +45,13 @@ public class Player {
 
     public void setMinutes(int minutes) {
         this.minutes = minutes;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 }
