@@ -32,9 +32,7 @@ public class Team {
         String[] playerData = new String[5];
 
         while (!foundPlayer){
-            if(i == players.size() && !foundPlayer){
-                return null;
-            }
+
             if(players.get(i).getName().equals(pname)){
                 foundPlayer = true;
                 playerData[0] = players.get(i).getName();
@@ -43,6 +41,10 @@ public class Team {
                 playerData[3] = String.valueOf(players.get(i).getAssists());
                 playerData[4] = String.valueOf(players.get(i).getMinutes());
             }
+            if(i == players.size() && !foundPlayer){
+                return null;
+            }
+            i++;
         }
 
         return playerData;
