@@ -26,6 +26,30 @@ public class Team {
         return playerNames;
     }
 
+    public String[] getPlayerData(String pname){
+        boolean foundPlayer = false;
+        int i = 0;
+        String[] playerData = new String[5];
+
+        while (!foundPlayer){
+
+            if(players.get(i).getName().equals(pname)){
+                foundPlayer = true;
+                playerData[0] = players.get(i).getName();
+                playerData[1] = players.get(i).getPosition();
+                playerData[2] = String.valueOf(players.get(i).getGoals());
+                playerData[3] = String.valueOf(players.get(i).getAssists());
+                playerData[4] = String.valueOf(players.get(i).getMinutes());
+            }
+            if(i == players.size() && !foundPlayer){
+                return null;
+            }
+            i++;
+        }
+
+        return playerData;
+    }
+
     public Player createRandomPlayer(){
         String name = Character.toString((char)(players.size()+65));
         Player newPlayer = new Player(name);
